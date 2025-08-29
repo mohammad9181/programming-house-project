@@ -9,13 +9,14 @@
  * @author  Michael Kšlling and David J. Barnes
  * @version 7.0
  */
-public class Picture
+public class Picture extends Person
 {
     private Square wall;
     private Square window;
     private Triangle roof;
     private Circle sun;
     private boolean drawn; 
+    private boolean sunset;
 
     /**
      * Constructor for objects of class Picture
@@ -62,30 +63,16 @@ public class Picture
     
     public void Sunset()
     {
-        if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.makeVisible();
-            
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
-    
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
-    
-            sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
-            sun.makeVisible();
+        if(drawn = true) {
             sun.slowMoveVertical(300);
-            drawn = true;
+        }
+    }
+    
+    public void Reset()
+    {
+        if(!sunset)
+        {
+            sun.moveVertical(-300);
         }
     }
 
