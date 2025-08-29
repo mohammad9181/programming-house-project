@@ -15,8 +15,7 @@ public class Picture
     private Square window;
     private Triangle roof;
     private Circle sun;
-    private Circle sun2;
-    private boolean drawn;
+    private boolean drawn; 
 
     /**
      * Constructor for objects of class Picture
@@ -27,7 +26,6 @@ public class Picture
         window = new Square();
         roof = new Triangle();  
         sun = new Circle();
-        sun2 = new Circle();
         drawn = false;
     }
 
@@ -53,18 +51,40 @@ public class Picture
             roof.moveVertical(-60);
             roof.makeVisible();
     
-            sun.changeColor("blue");
+            sun.changeColor("yellow");
             sun.moveHorizontal(100);
             sun.moveVertical(-40);
             sun.changeSize(80);
             sun.makeVisible();
+            drawn = true;
+        }
+    }
+    
+    public void Sunset()
+    {
+        if(!drawn) {
+            wall.moveHorizontal(-140);
+            wall.moveVertical(20);
+            wall.changeSize(120);
+            wall.makeVisible();
             
-            sun2.changeColor("yellow");
-            sun2.moveHorizontal(-100);
-            sun2.moveVertical(-40);
-            sun2.changeSize(80);
-            sun2.makeVisible();
-            
+            window.changeColor("black");
+            window.moveHorizontal(-120);
+            window.moveVertical(40);
+            window.changeSize(40);
+            window.makeVisible();
+    
+            roof.changeSize(60, 180);
+            roof.moveHorizontal(20);
+            roof.moveVertical(-60);
+            roof.makeVisible();
+    
+            sun.changeColor("yellow");
+            sun.moveHorizontal(100);
+            sun.moveVertical(-40);
+            sun.changeSize(80);
+            sun.makeVisible();
+            sun.slowMoveVertical(300);
             drawn = true;
         }
     }
@@ -78,7 +98,6 @@ public class Picture
         window.changeColor("white");
         roof.changeColor("black");
         sun.changeColor("black");
-        sun2.changeColor("black");
     }
 
     /**
@@ -89,7 +108,6 @@ public class Picture
         wall.changeColor("red");
         window.changeColor("black");
         roof.changeColor("green");
-        sun.changeColor("blue");
-        sun2.changeColor("yellow");
+        sun.changeColor("yellow");
     }
 }
