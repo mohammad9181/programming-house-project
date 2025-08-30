@@ -17,6 +17,7 @@ public class Picture extends Person
     private Circle sun;
     private boolean drawn; 
     private boolean sunset;
+    private Person man;
 
     /**
      * Constructor for objects of class Picture
@@ -57,15 +58,28 @@ public class Picture extends Person
             sun.moveVertical(-40);
             sun.changeSize(80);
             sun.makeVisible();
+            
             drawn = true;
         }
     }
     
     public void Sunset()
     {
-        if(drawn = true) {
+        if(drawn == true) {
             sun.slowMoveVertical(300);
+            sunset = false;
+            manExit();
         }
+    }
+    
+    public void manExit()
+    {
+        Exit();
+    }
+    
+    public void Exit()
+    {
+        
     }
     
     public void Reset()
